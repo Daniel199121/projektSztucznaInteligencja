@@ -107,7 +107,7 @@ def hetmani(n):
     else:
         print("N out of bounds")
 
-print("-----ZADANIE_4-----")
+print("-----ZADANIE_5-----")
 print("-------PROBLEM OŚMIU HETMANÓW - WSZYSTKIE ROZWIĄZANIA DLA N-------")
 #Single example
 hetmani(4)
