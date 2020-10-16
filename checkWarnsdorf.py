@@ -62,6 +62,8 @@ def skoczek(move, pos_x, pos_y):
     else:
         print("Mov out of bounds")
 
+print("-----ZADANIE_3-----")
+print("-------PROBLEM SKOCZKA SZACHOWEGO - WARNSDORFF-------")
 #Single example
 #skoczek(0, 0, 0)
 
@@ -70,6 +72,6 @@ i = 1
 for c in range(8):
     for b in range(8):
         for a in range(8):
-            print(str(i)+". SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c))
+            print("------" + str(i)+". SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c) + "------")
             i += 1
             skoczek(a, b, c)

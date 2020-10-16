@@ -88,12 +88,14 @@ def hetmani(n):
     else:
         print("N out of bounds")
 
+print("-----ZADANIE_4-----")
+print("-------PROBLEM OŚMIU HETMANÓW-------")
 #Single example
 #hetmani(5)
 
 # Generate more examples - standard for 20 examples
 for n in range(1, 21):
-    print("----------SOLUTION FOR " + str(n) + " COLUMNS AND RAWS -------------------")
+    print("-------------------SOLUTION FOR " + str(n) + " COLUMNS AND RAWS-------------------")
     hetmani(n)
 
 # This code is contributed by Divyanshu Mehta

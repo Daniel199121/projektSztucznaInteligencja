@@ -102,6 +102,9 @@ def solveKTUtil(board, curr_x, curr_y, move_x, move_y, pos):
 
     return False
 
+
+print("-----ZADANIE_2-----")
+print("-------PROBLEM SKOCZKA SZACHOWEGO-------")
 #Single example
 #skoczek(0, 0, 0)
 
@@ -112,8 +115,8 @@ for c in range(8):
         for a in range(8):
             #IF which not include a few examples recognized as a BIG Time Consuming
             if not ((a==3 and b==0 and c==0) or (a==2 and b==2 and c==0)):
-                print(str(i)+". SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c))
+                print("------" + str(i)+". SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c)+ "------")
                 i += 1
                 skoczek(a, b, c)
             else:
-                print(str(i)+". LEAVE SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c))
+                print("------" + str(i)+". LEAVE SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c)+ "------")
