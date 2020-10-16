@@ -1,7 +1,7 @@
 from heapq import heappush, heappop # for priority queue
 import random
 import string
-def warnsdorfKnightChess(move, pos_x, pos_y):
+def skoczek(move, pos_x, pos_y):
     cbx = 8; cby = 8 # width and height of the chessboard
     cb = [[0 for x in range(cbx)] for y in range(cby)] # chessboard
     # directions the Knight can move on the chessboard
@@ -62,12 +62,14 @@ def warnsdorfKnightChess(move, pos_x, pos_y):
     else:
         print("Mov out of bounds")
 
-warnsdorfKnightChess(0, 0, 0)
+#Single example
+#skoczek(0, 0, 0)
 
-'''i = 1
+#Generate each possible solution
+i = 1
 for c in range(8):
     for b in range(8):
         for a in range(8):
             print(str(i)+". SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c))
             i += 1
-            warnsdorfKnightChess(a, b, c)'''
+            skoczek(a, b, c)

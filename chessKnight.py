@@ -23,7 +23,7 @@ def printSolution(board):
         print()
 
 
-def solveKT(move, first_x, first_y):
+def skoczek(move, first_x, first_y):
     '''
         This function solves the Knight Tour problem using
         Backtracking. This function mainly uses solveKTUtil()
@@ -102,11 +102,18 @@ def solveKTUtil(board, curr_x, curr_y, move_x, move_y, pos):
 
     return False
 
-solveKT(0, 0, 0)
-'''i = 1
-for a in range(8):
+#Single example
+#skoczek(0, 0, 0)
+
+# Generate ech possible solution
+i = 1
+for c in range(8):
     for b in range(8):
-        for c in range(8):
-            print(str(i)+". SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c))
-            i += 1
-            solveKT(a, b, c)'''
+        for a in range(8):
+            #IF which not include a few examples recognized as a BIG Time Consuming
+            if not ((a==3 and b==0 and c==0) or (a==2 and b==2 and c==0)):
+                print(str(i)+". SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c))
+                i += 1
+                skoczek(a, b, c)
+            else:
+                print(str(i)+". LEAVE SOLUTION FOR: a= "+str(a)+", b= "+str(b)+", c= "+str(c))
