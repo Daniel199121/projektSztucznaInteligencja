@@ -8,6 +8,8 @@ def hanoi(n, source, destination, auxiliary ):
         hanoi(n - 1, auxiliary, destination, source)
 
 n = 3
+
 print("-----ZADANIE_1-----")
 print("-------HANOI-------")
+
 hanoi(n, 'A', 'C', 'B')
