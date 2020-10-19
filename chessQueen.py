@@ -1,23 +1,12 @@
-# Python3 program to solve N Queen
-# Problem using backtracking
-
-
-
-def printSolution(board, n):
+#check if coordinates are in bounds
+def printBoard(board, n):
     for i in range(n):
         for j in range(n):
             print(board[i][j], end=" ")
         print()
 
-    # A utility function to check if a queen can
-
-
-# be placed on board[row][col]. Note that this
-# function is called when "col" queens are
-# already placed in columns from 0 to col -1.
-# So we need to check only left side for
-# attacking queens
-def isSafe(board, row, col, n):
+#check if coordinates are in proper place - dont cross the laws of the algorithm
+def validatePosition(board, row, col, n):
     # Check this row on left side
     for i in range(col):
         if board[row][i] == 1:
@@ -37,53 +26,39 @@ def isSafe(board, row, col, n):
 
     return True
 
+#check placing all available hetmans
+def checkPlacing(board, col, n):
 
-def solveNQUtil(board, col, n):
-    # base case: If all queens are placed
-    # then return true
     if col >= n:
         return True
 
-    # Consider this column and try placing
-    # this queen in all rows one by one
+    # Consider this column and try placing this hetman in all rows one by one
     for i in range(n):
 
-        if isSafe(board, i, col, n):
+        if validatePosition(board, i, col, n):
 
-            # Place this queen in board[i][col]
+            # Place this hetman in board[i][col]
             board[i][col] = 1
 
-            # recur to place rest of the queens
-            if solveNQUtil(board, col + 1, n) == True:
+            # recur to place rest of the hetmans
+            if checkPlacing(board, col + 1, n) == True:
                 return True
 
-            # If placing queen in board[i][col
-            # doesn't lead to a solution, then
-            # queen from board[i][col]
+            # If placing hetman in board[i][col] doesn't lead to a solution, then hetman from board[i][col]
             board[i][col] = 0
 
-    # if the queen can not be placed in any row in
-    # this colum col then return false
+    # if the hetman can not be placed in any row in
     return False
 
-
-# This function solves the N Queen problem using
-# Backtracking. It mainly uses solveNQUtil() to
-# solve the problem. It returns false if queens
-# cannot be placed, otherwise return true and
-# placement of queens in the form of 1s.
-# note that there may be more than one
-# solutions, this function prints one of the
-# feasible solutions.
 def hetmani(n):
     if n > 0:
         board = [[0 for i in range(n)] for i in range(n)]
 
-        if solveNQUtil(board, 0, n) == False:
+        if checkPlacing(board, 0, n) == False:
             print("Solution does not exist")
             return False
 
-        printSolution(board, n)
+        printBoard(board, n)
         return True
     else:
         print("N out of bounds")
@@ -91,11 +66,9 @@ def hetmani(n):
 print("-----ZADANIE_4-----")
 print("-------PROBLEM OŚMIU HETMANÓW-------")
 #Single example
-#hetmani(5)
+hetmani(5)
 
-# Generate more examples - standard for 20 examples
+'''Generate more examples - standard for 20 examples
 for n in range(1, 21):
     print("-------------------SOLUTION FOR " + str(n) + " COLUMNS AND RAWS-------------------")
-    hetmani(n)
-
-# This code is contributed by Divyanshu Mehta
+    hetmani(n)'''
